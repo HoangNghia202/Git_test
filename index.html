@@ -40,8 +40,11 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our
                         lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm align-self-center">
-                    <img src="./img/logo.png" class="img-fluid" alt="">
+                <div class="col-12 col-sm-3 align-self-center  justify-content-center">
+                    <img src="./img/logo.png" class="img-fluid " alt="">
+                </div>
+                <div class="align-self-center col-12 col-sm-3 ">
+                   <a href="#reserve-table" type="button" class="btn btn-warning  btn-lg font-weight-bold" style="width: 100%;"> Reserve Table</a>
                 </div>
 
             </div>
@@ -76,7 +79,7 @@
                 <div class="media">
                     <img src="./img/buffet.png" alt=""  class="d-flex mr-3 img-thumbnail align-self-center">
                     <div class="media-body">
-                         <h2 class="mt-0">Weekend Grand Buffet</h2>
+                         <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
                          <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers,
                             six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just
                             $19.99 per person </p>
@@ -103,10 +106,48 @@
                 </div>
                
             </div>
+
+            
         </div>
 
-     
+        <div class="row " id="reserve-table">
+            <div class=" col-12  col-md-8 mx-auto my-5">
+                    <div class="card">
+                      <h3 class="card-header bg-warning text-white">Reserve a Table </h3>
+                        <div class="card-body">
+                            <dl class="row">
+                                <dd class="col-sm-12 col-md-2">Number of Guests</dd>
+                                <dd class="col-sm-12 col-md-8 clearfix">
+                                    <div row>
+                                        <input type="radio" value="1" name="number-of-guest"> <label for="">1</label> &nbsp;
+                                        <input type="radio" value="2"  name="number-of-guest"> <label for="">2</label> &nbsp;
+                                        <input type="radio" value="3"  name="number-of-guest"> <label for="">3</label> &nbsp;
+                                        <input type="radio" value="4"  name="number-of-guest"> <label for="">4</label> &nbsp;
+                                        <input type="radio" value="5"  name="number-of-guest"> <label for="">5</label>&nbsp;
+                                        <input type="radio" value="6"  name="number-of-guest"> <label for="">6</label>
 
+                                    </div>
+                                </dd>
+                                <dd class="col-12"></dd>
+                                <dd class="col-sm-12 col-md-2">Date and time</dd>
+                                <dd class="col-sm-12 col-md-10">
+                                    <div class="row container">
+                                        <input type="text" class="col-md-5 form-control" placeholder="Date" >
+                                        <input type="text" class="col-md-5 offset-md-1 form-control " placeholder="Time">
+                                    </div>
+                                    
+                                </dd>
+                                <dd class="col-12"></dd>
+                                
+                                <div class="container">
+                                     <Button type="button" class="btn btn-primary text-white offset-md-2">Reserve</Button>
+                                </div>
+                              
+                            </dl>
+                        </div>
+                    </div>
+            </div>
+        </div>
       
     </div>
 
