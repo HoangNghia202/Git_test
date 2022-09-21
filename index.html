@@ -91,7 +91,7 @@
                 <div class="col-12 col-sm-3 align-self-center  justify-content-center">
                     <img src="./img/logo.png" class="img-fluid " alt="">
                 </div>
-                <!-- tooltips -->
+                <!-- button reserve modal -->
                 <div class="align-self-center col-12 col-sm-3 ">
                     <a href="#reserve-table" type="button" class="btn btn-warning  btn-lg font-weight-bold btn-block"
                         data-toggle="modal" data-target="#reserve-table"> Reserve Table</a>
@@ -147,6 +147,9 @@
                                     $19.99 per person </p>
                             </div>
                         </div>
+
+                       
+                      
                     </div>
 
 
@@ -161,6 +164,22 @@
                     <a href="#mycarousel" class="carousel-control-next" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+
+                     <!-- <div class="btn-group" id="carouselButton">
+                            <button class="btn btn-danger btn-sm" id="carousel-pause">
+                                <span class="fa fa-pause"></span>
+                            </button>
+                            <button class="btn btn-danger btn-sm" id="carousel-play">
+                                <span class="fa fa-play"></span>
+                            </button>
+
+                        </div> -->
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span id="carousel-button-icon" class="fa fa-pause"></span>
+                        </button>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -171,7 +190,8 @@
             </div>
             <div class="col col-sm order-sm-first col-md">
                 <div class="media">
-                    <img src="./img/uthappizza.png" alt="Uthappizza" class="d-flex mr-3 img-thumbnail align-self-center">
+                    <img src="./img/uthappizza.png" alt="Uthappizza"
+                        class="d-flex mr-3 img-thumbnail align-self-center">
                     <div media-body>
                         <h2 class="mt-0">Uthappizza <span class="badge  badge-danger">HOT</span> <span
                                 class="badge badge-pill badge-secondary">$4.99</span></h2>
@@ -179,13 +199,13 @@
                             pizza, topped with Cerignola olives,
                             ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
                     </div>
-    
+
                 </div>
-    
+
             </div>
         </div>
-    
-    
+
+
         <div class="row row-content">
             <div class="col-12 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
@@ -202,10 +222,10 @@
                             $19.99 per person </p>
                     </div>
                 </div>
-    
+
             </div>
         </div>
-    
+
         <div class="row row-content">
             <div class="col-12 col-sm-4 order-sm-last col-md-3">
                 <h3>Meet our Culinary Specialists</h3>
@@ -222,14 +242,16 @@
                             experiences. </p>
                     </div>
                 </div>
-    
+
             </div>
-    
-    
+
+
         </div>
-    
+
     </div>
-  
+
+
+    <!-- Modal reserve table -->
     <div class="row modal fade" role="dialog" id="reserve-table">
         <div class=" modal-dialog modal-lg" role="content">
             <div class="modal-content">
@@ -253,16 +275,17 @@
                             </div>
                         </dd>
                         <dd class="col-12"></dd>
-                        <dd class="col-md-10 offset-md-2 ">
-                            <section class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <dd class="col-md-2">Section</dd>
+                        <dd class="col-md-10 ">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-success active">
-                                    <input type="radio" name="smoke" checked >Non-Smoking</input>
+                                    <input type="radio" name="smoke" checked>Non-Smoking</input>
                                 </label>
                                 <label class="btn btn-danger ">
                                     <input type="radio" name="smoke">Smoking</input>
                                 </label>
 
-                            </section>
+                            </div>
                         </dd>
                         <dd class="col-md-12"></dd>
                         <dd class="col-sm-12 col-md-2">Date and time</dd>
@@ -276,15 +299,15 @@
                         <dd class=" col-12">
                         </dd>
 
-                      
-                            <div class="offset-md-2 col-md-10">
-                                <button type="button" class="offset-md-2 btn btn-secondary ml-auto"
-                                    data-dismiss="modal">Cancel
-                                </button>
-                                <Button type="button" class="btn btn-primary text-white ">Reserve</Button>
-                            </div>
 
-                        
+                        <div class="offset-md-2 col-md-10">
+                            <button type="button" class="offset-md-2 btn btn-secondary ml-auto"
+                                data-dismiss="modal">Cancel
+                            </button>
+                            <Button type="submit" class="btn btn-primary text-white ">Reserve</Button>
+                        </div>
+
+
 
                     </dl>
                 </div>
@@ -343,11 +366,40 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
+    <!-- <script>
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
         }
         )
+    </script> -->
+
+    <!-- <script>
+
+        $(document).ready(function () {
+            $("#mycarousel").carousel({ interval: 2000 });
+            $("#carousel-pause").click(function () {
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function () {
+                $("#mycarousel").carousel('cycle');
+            });
+        });
+    </script> -->
+
+    <script>
+        $("#carouselButton").click(function () {
+
+            if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                $("#mycarousel").carousel('pause');
+                $("#carouselButton").children("span").removeClass('fa-pause');
+                $("#carouselButton").children("span").addClass('fa-play');
+            } else if ($("#carouselButton").children("span").hasClass('fa-play')) {
+                $("#mycarousel").carousel('cycle');
+                $("#carouselButton").children("span").removeClass('fa-play');
+                $("#carouselButton").children("span").addClass('fa-pause');
+            }
+
+        });
     </script>
 </body>
 
